@@ -1,0 +1,10 @@
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+<ng-container *ngFor="let card of cardArray | async">
+  <app-user-card
+    (eventDeleteUser)="deleteUser($event)"
+    (eventViewLogin)="viewUser($event)"
+    [totalUsers]="totalUsers | async"
+    [index]="card.idUser"
+    [isActiveColor]="true"
+    [card]="card"></app-user-card>
+</ng-container>

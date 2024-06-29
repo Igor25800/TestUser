@@ -1,0 +1,20 @@
+<mat-card class="container" appearance="outlined"  [ngClass]="{
+  'blue-card':  isFirstUser,
+  'yellow-card': isLastUser,
+  'green-card': isEveryThird
+}">
+  <mat-card-content class="card">
+    <div class="img">
+      <img [src]="card.avatar_url" alt="">
+    </div>
+    <div class="body">
+      <div class="title">id: {{card.idUser}} Login: {{card.login | titlecase }}</div>
+      <mat-card-actions class="btn" *ngIf="isShowBtn">
+        <button mat-raised-button (click)="viewUser()">View Profile</button>
+        <button mat-raised-button>Add Shortlist</button>
+        <button mat-raised-button (click)="deleteUser()">Delete</button>
+      </mat-card-actions>
+      <div *ngIf="isShowBtn" class="text">It's always all about me and what I can do for youllt's always all about me and what I can do for you!It's always all about me and what I can do for you!It's always all about me and what I can do </div>
+    </div>
+  </mat-card-content>
+</mat-card>
