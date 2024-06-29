@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit {
   deleteUser(id: number): void {
     const updatedData = this.dataSource.data.filter(user => user.id !== id);
     this.updateUserArray(updatedData);
-
   }
 
   viewUser(name: string): void {
